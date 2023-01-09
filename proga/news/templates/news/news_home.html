@@ -1,0 +1,48 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Новости на сайте {% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1> Новости на сайте </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt iure molestias nobis porro rerum, ut! Assumenda at earum in rem!</p>
+
+    {% if news %}
+        {% for n in news %}
+            <div class="alert alert-warning">
+                <h3>{{ n.title }}</h3>
+                <p>{{ n.anons }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Новостей нет</p>
+    {% endif %}
+
+    {# Comment #}
+        <div class="container">
+        <h1>3 различных блока</h1>
+        <div class="row">
+            <dic class="col-md-4" style="background-color: #ff9999;">Left</dic>
+            <dic class="col-md-4" style="background-color: #61ad35;">Middle</dic>
+            <dic class="col-md-4" style="background-color: #00CC99;">Right</dic>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-4 col-lg-6" style="background-color: #ff9999;">Первый</div>
+            <div class="col-xs-12 col-sm-3 col-md-8 col-lg-6"  style="background-color: #99CCFF;">Второй</div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-push-7">
+                <div class="row">
+                    <div class="col-lg-6" style="background-color: #ff161631;">Первый</div>
+                    <div class="col-lg-6"  style="background-color: #0ac743;">Второй</div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-lg-pull-5"  style="background-color: #b49d19;">Второй</div>
+        </div>
+
+</div>
+
+
+{% endblock %}
